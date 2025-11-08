@@ -3,7 +3,7 @@ import datetime
 book_dict = {}
 
 def book_management(books: dict):
-    format_string = "%d %b %Y"
+    format_string    = "%d %b %Y"
     new_entry = []
     flag = True
 
@@ -16,7 +16,7 @@ def book_management(books: dict):
         print("[4] View Book")
         print("[5] Edit Book")
         print("[6] View Pending")
-        print("[0] Exit")
+        print("[0] Return to Main Menu")
         choice = input("Input your choice: ")
         if choice == "0":
             break

@@ -19,11 +19,12 @@ def log_management(log_dict: dict):
         print("[1] Visit libray (enter log details)")
         print("[2] View all entries")
         print("[3] Transactions per day")
+        print("[0] Return to Main Menu")
         choice = input("Enter your choice: ")
         if choice == "0":
             break
         elif choice == "1":
-            Id = input("Input Log id (format L<number?):")
+            Id = input("Input Log id (format L<number>): ")
             Id = Id[0].upper() + Id[1:]
             if Id[0] != "L":
                 print("Error! Invalid Book Format.")
@@ -38,6 +39,9 @@ def log_management(log_dict: dict):
                     break
             
             if not flag:
+                continue
+
+            if Id in logs_dict:
                 continue
 
             Name = input("Enter name: ")
@@ -63,6 +67,7 @@ def log_management(log_dict: dict):
             if not Time_init:
                 print("Input required")
                 continue
+            check2 = True
             try:
                 time_object = datetime.datetime.strptime(Time_init, format_string_time).date()
                 time_final = time_object
