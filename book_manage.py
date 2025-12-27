@@ -396,24 +396,19 @@ def book_manage(book_manage: dict, log_manage: dict, borrow_manage: dict):
             continue
         if select == 1:
             add_book(book_manage)
-            print(book_manage)
         elif select == 2:
             delete_book(book_manage)
-            print(book_manage)
         elif select == 3:
             delete_all_books(book_manage)
-            print(book_manage)
         elif select == 4:
             view_book(book_manage, log_manage, borrow_manage)
         elif select == 5:
             view_all_books(book_manage, log_manage, borrow_manage)
         elif select == 6:
             edit_book(book_manage, log_manage, borrow_manage)
-            print(book_manage)
         elif select == 7:
             view_pending(book_manage, log_manage, borrow_manage)
         elif select == 0:
-            print("Going back to main menu!")
             break
         else:
             print("Invalid option")

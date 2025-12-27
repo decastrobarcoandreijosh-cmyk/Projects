@@ -1,20 +1,28 @@
 import book_manage
 import log_manage
+import borrow_manage
 
 books = { 
     'B1': {
         'title': "Bible", 
         'author': "Jesus", 
         'date_published': "1 Jan 1990", 
-        'status': "Unavailable",
-        'list_of_borrowers': ["BL1", "BL2"] # Changed BL3 to BL2 to match borrows
+        'status': "available",
+        'list_of_borrowers': ["BL1"] # Changed BL3 to BL2 to match borrows
     },
     'B2': {
         'title': "Bible", 
         'author': "God", 
         'date_published': "25 Dec 1990", 
         'status': "Unavailable",
-        'list_of_borrowers': ["BL1", "BL2"] # Changed BL3 to BL2 to match borrows
+        'list_of_borrowers': ["BL2"] # Changed BL3 to BL2 to match borrows
+    },
+    'B3': {
+        'title': "Harry Potta", 
+        'author': "JK lang", 
+        'date_published': "25 Dec 1998", 
+        'status': "Available",
+        'list_of_borrowers': ["BL5"] # Changed BL3 to BL2 to match borrows
     }
 }
 
@@ -30,6 +38,12 @@ logs = {
         'date_of_log': '22 Oct 2022',
         'time_of_log': '1:00 PM',
         'purpose': 'borrow'
+    },
+    'L3': {
+        'name': 'mj',
+        'date_of_log': '22 Jan 2022',
+        'time_of_log': '1:00 PM',
+        'purpose': 'borrow'
     }
 }
 
@@ -40,9 +54,14 @@ borrows = {
         'date_return': '9 Mar 2022'
     }, # Added missing comma
     'BL2': {
-        'book_id': 'B1',
+        'book_id': 'B2',
         'log_id': 'L2',
         'date_return': '9 Nov 2022'    
+    },
+    'BL5': {
+        'book_id': 'B3',
+        'log_id': 'L3',
+        'date_return': '9 Jan 2024'    
     }
 }
 
@@ -59,7 +78,7 @@ while True:
     elif select == '2':
         log_manage.log_manage(logs)
     elif select == '3':
-        print()
+        borrow_manage.borrow_manage(books, logs, borrows)
     elif select == '0':
         print("Bye!")
         break

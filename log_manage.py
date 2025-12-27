@@ -228,7 +228,7 @@ def log_manage(log_manage: dict):
         print("[3] VIEW TRANSACTIONS PER DAY")
         print("[0] RETURN TO MAIN MENU")
         select = input("Enter your input: ")       
-
+        
         if select == '1':
             visit_library(log_manage)
         elif select == '2':
@@ -236,5 +236,4 @@ def log_manage(log_manage: dict):
         elif select == '3':
             view_entry_per_day(log_manage)
         elif select == '0':
-            print("Bye!")
             break
