@@ -42,6 +42,7 @@ def borrow_book(book_manage: dict, log_manage: dict, borrow_manage: dict):
                         for key, value in log_manage.items():
                             if key == log_id:
                                 print(value['name'])
+                        log_id = ''
                 print()
 
         title = (input("Enter title of book you wish to borrow: ")).lower()
@@ -78,6 +79,7 @@ def borrow_book(book_manage: dict, log_manage: dict, borrow_manage: dict):
                                 for key, value in log_manage.items():
                                     if key == log_id:
                                         print(value['name'])
+                                log_id = ''
                         print()
 
             book_id = input("Which book do you select?: ")
@@ -331,6 +333,7 @@ def return_book(book_manage: dict, log_manage: dict, borrow_manage:dict):
                     if key == log_id:
                         print(value['name'])
                         break
+                log_id = ''
                 print()
 
         book_id = input("Enter Book ID of the book you wish to return: ")

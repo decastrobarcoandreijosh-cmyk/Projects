@@ -183,6 +183,7 @@ def view_book(book_manage: dict, log_manage: dict, borrow_manage: dict):
                         for key, value in log_manage.items():
                             if key == log_id:
                                 print(value['name'])
+                        log_id = ''
 
                 print()
         break
@@ -213,6 +214,8 @@ def view_all_books(book_manage: dict, log_manage: dict, borrow_manage: dict):
                     for key, value in log_manage.items():
                         if key == log_id:
                             print(value['name'])
+                    
+                    log_id = ''
 
                             
             print()
@@ -265,6 +268,7 @@ def edit_book(book_manage:dict, log_manage: dict, borrow_manage: dict):
                             for key, value in log_manage.items():
                                 if key == log_id:
                                     print(value['name'])
+                            log_id = ''
 
                     print()
             select_edit = input("Enter the Book ID of the book you wish to edit: ")
@@ -337,6 +341,7 @@ def edit_book(book_manage:dict, log_manage: dict, borrow_manage: dict):
                 for key, value in log_manage.items():
                     if key == log_id:
                         print(value['name'])
+                log_id = ''
         print()
         break
 
@@ -368,6 +373,7 @@ def view_pending(book_manage: dict, log_manage: dict, borrow_manage: dict):
                     for key, value in log_manage.items():
                         if key == log_id:
                             print(value['name'])
+                    log_id = ''
                     
                     for key, value in borrow_manage.items():
                         if key == borrow_id:

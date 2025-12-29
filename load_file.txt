@@ -1,0 +1,13 @@
+START_BOOK
+B1,Bible,Jesus,1 Jan 1990,Available,BL1
+B5,Bible,Jesus,1 Jan 1990,Available,BL2
+B9,Bible,Jesus,1 Jan 1990,Available,
+END_BOOK
+
+START_LOG
+L1,jeffrey,22 Feb 2022,2:30 PM,borrow
+END_LOG
+
+START_BORROW
+BL1,B1,L1,9 Mar 2029
+END_BORROW

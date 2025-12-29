@@ -2,8 +2,9 @@ import book_manage
 import log_manage
 import borrow_manage
 import csv
+import save_load
 
-books = {
+books = {}
 """
     'B1': {
         'title': "Bible", 
@@ -27,9 +28,9 @@ books = {
         'list_of_borrowers': ["BL5"] # Changed BL3 to BL2 to match borrows
     }
 """
-}
 
-logs = {
+
+logs = {}
 """
     'L1': {
         'name': 'jeffrey',
@@ -50,9 +51,9 @@ logs = {
         'purpose': 'borrow'
     }
 """
-}
 
-borrows = { 
+
+borrows = {}
 """
     'BL1': {
         'book_id': 'B1',
@@ -70,19 +71,20 @@ borrows = {
         'date_return': '9 Jan 2020'    
     }
 """
-}
 
 
-def load_file(file: str):
-    with open(file, mode='r', newline='') as file_reader:
-        file_load = csv.reader(file_reader, delimiter=',')
-        for line in file_load:
-            print(line)
+
+
+                
+
 
 
 
 while True:
-    load_file("load_file.txt")
+    save_load.load_file("load_file.txt", books, logs, borrows)
+    print(books)
+    print(logs)
+    print(borrows)
     print("=== MAIN MENU ===")
     print("[1] BOOK MANAGEMENT")
     print("[2] BORROW MANAGEMENT")
@@ -97,6 +99,7 @@ while True:
         log_manage.log_manage(logs)
     elif select == '0':
         print("Bye!")
+        save_load.save_file("load_file.txt", books, logs, borrows)
         break
     else:
         print("Invalid Input.")
