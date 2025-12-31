@@ -79,9 +79,8 @@ borrows = {}
 
 
 
-
+save_load.load_file("load_file.txt", books, logs, borrows)
 while True:
-    save_load.load_file("load_file.txt", books, logs, borrows)
     print(books)
     print(logs)
     print(borrows)
